@@ -1,6 +1,6 @@
 on:
-  issue_comment:
-    types: [created]
+  issues:
+    types: [opened]
 
 jobs:
   hello_world_job:
