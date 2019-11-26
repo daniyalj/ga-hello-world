@@ -6,7 +6,7 @@ RUN apk update \
  && rm -rf /var/cache/apk/*
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /parse_issue.sh
+COPY parse_issue.sh /parse_issue.sh
 
 RUN chmod +x /parse_issue.sh
 
