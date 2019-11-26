@@ -1,16 +1,13 @@
 # action.yml
-name: 'Hello Daniyal'
-description: 'Greet someone and record the time'
+name: 'Parse latest issue body'
+description: 'Grab output of latest issue'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  repo-name:
+    description: 'In the format of <org>/<repo>'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    default: 'joe/hudson'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.repo-name }}
