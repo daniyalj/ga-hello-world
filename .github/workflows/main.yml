@@ -13,3 +13,17 @@ jobs:
       uses: daniyalj/ga-hello-world@master
       with:
         repo_name: 'daniyalj/ga-hello-world'
+
+    - uses: actions/checkout@master
+    - name: Create local changes
+      run: |
+        mv latest_issue daniyalj/ga-hello-world
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Add changes" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
