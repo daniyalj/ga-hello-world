@@ -1,7 +1,11 @@
 # Container image that runs your code
-FROM docker.io/daniyalj/utility-pod:v2
+FROM alpine:3.10
 
-USER root
+RUN apk update \
+ && apk add jq \
+ && apk add curl \
+ && rm -rf /var/cache/apk/*
+
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY parse_issue.sh /parse_issue.sh
 
