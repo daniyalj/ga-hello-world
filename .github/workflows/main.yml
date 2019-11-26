@@ -10,4 +10,4 @@ jobs:
     - name: Parse latest GitHub issue
       uses: daniyalj/ga-hello-world@master
       with:
-        repo-name: 'daniyalj/ga-hello-world'
+        repo_name: 'daniyalj/ga-hello-world'
