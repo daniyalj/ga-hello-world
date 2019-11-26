@@ -1,6 +1,7 @@
 # Container image that runs your code
 FROM docker.io/daniyalj/utility-pod:v2
 
+USER root
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY parse_issue.sh /parse_issue.sh
 
