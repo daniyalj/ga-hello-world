@@ -8,6 +8,6 @@ jobs:
     name: Grab body of latest issue
     steps:
     - name: Parse latest GitHub issue
-      uses: daniyalj/ga-hello-world
+      uses: daniyalj/ga-hello-world@master
       with:
         repo-name: 'daniyalj/ga-hello-world'
