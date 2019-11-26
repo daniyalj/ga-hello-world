@@ -8,6 +8,8 @@ jobs:
     name: Grab body of latest issue
     steps:
     - name: Parse latest GitHub issue
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       uses: daniyalj/ga-hello-world@master
       with:
         repo_name: 'daniyalj/ga-hello-world'
