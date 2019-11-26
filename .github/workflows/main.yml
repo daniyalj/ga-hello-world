@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@master
     - name: Create local changes
       run: |
-        mv /latest_issue daniyalj/ga-hello-world
+        ls
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
