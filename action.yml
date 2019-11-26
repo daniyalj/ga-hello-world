@@ -1,6 +1,6 @@
 # action.yml
 name: 'Parse latest issue body'
-description: 'Grab output of latest issue'
+description: 'Grab body of latest issue'
 inputs:
   repo-name:
     description: 'In the format of <org>/<repo>'
