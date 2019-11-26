@@ -1,5 +1,3 @@
 #!/bin/sh -l
 
-echo "Hello $1"
-time=$(date)
-echo ::set-output name=time::$time
+curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -X GET -d @issue.json https://api.github.com/repos/daniyalj/${{ repo-name }} --header "Content-Type:application/vnd.github.symmetra-preview+json" | jq '.[0] |  .body' > issues
