@@ -2,12 +2,17 @@
 name: 'Parse latest issue body'
 description: 'Grab body of latest issue'
 inputs:
-  repo_name:
-    description: 'In the format of <org>/<repo>'
+  org_name:
+    description: 'In the format of <org>'
     required: true
-    default: 'joe/hudson'
+    default: 'john'
+  repo_name:
+    description: 'In the format of <repo>'
+    required: true
+    default: 'doe'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.repo_name }}
+    - ${{ inputs.org_name }}
