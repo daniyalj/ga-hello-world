@@ -7,10 +7,10 @@ ls
 git clone https://github.com/$INPUT_ORG_NAME/$INPUT_REPO_NAME
 ls
 cat latest_issue
-mv latest_issue $INPUT_REPO_NAME
-git config --global user.email "daniyaljavedk@gmail.com"
-git config --global user.name "daniyalj"
+mv latest_issue $INPUT_REPO_NAME/issues
+git config --global user.email "$INPUT_GLOBAL_EMAIL"
+git config --global user.name "$GITHUB_ACTOR"
 cd $INPUT_REPO_NAME
 git add .
 git commit -m "Add latest_issue"
-git push
+git push https://$INPUT_ORG_NAME:$GITHUB_TOKEN@github.com/$INPUT_ORG_NAME/$INPUT_REPO_NAME.git
