@@ -3,10 +3,11 @@ curl -H "Authorization: token $GITHUB_TOKEN" -X GET https://api.github.com/repos
 ls
 sed 's/\"//g' issues > latest_issue
 cat latest_issue
-git clone https://github.com/$INPUT_REPO_NAME
+git clone https://github.com/$INPUT_ORG_NAME/$INPUT_REPO_NAME
+cat latest_issue
 mv latest_issue $INPUT_REPO_NAME
-git config --local user.email "action@github.com"
-git config --local user.name "GitHub Action"
+git config user.email "action@github.com"
+git config user.name "GitHub Action"
 cd $INPUT_REPO_NAME
 git add .
-git commit -m "Add changes"
+git commit -m "Add latest_issue"
