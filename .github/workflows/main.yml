@@ -12,7 +12,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       uses: daniyalj/ga-hello-world@master
       with:
-        repo_name: 'daniyalj/ga-hello-world'
+        org_name: 'daniyalj'
+        repo_name: 'ga-hello-world'
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
