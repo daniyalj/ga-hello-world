@@ -10,9 +10,14 @@ inputs:
     description: 'In the format of <repo>'
     required: true
     default: 'doe'
+  global_email:
+    description: 'In the format of <email@email.com>'
+    required: true
+    default: 'johndoe@johndoe.com'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.repo_name }}
     - ${{ inputs.org_name }}
+    - ${{ inputs.global_email }}
